@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Playfair Display", serif;
+  background: #fff;
+}
+.wrapper {
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80");
+  color: #eee;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  animation: animation 100s linear infinite;
+}
+
+@keyframes animation {
+  100% {
+    background-position: 0px -3000px;
+  }
+}
+.myImage {
+  width: 200px;
+  height: 200px;
+  background-image: url("../../assets/images/whiteLogo2.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+.card,
+#form {
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 253, 0, 0.185),
+    rgba(0, 0, 0, 0.603),
+    rgba(0, 8, 4, 0.863),
+    rgba(0, 253, 0, 0.157)
+  );
+  border-radius: 10%;
+  margin: 0;
+  position: absolute;
+  width: 600px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+input[type="text"] {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+}
+input[type="password"] {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  color: white;
+}
+input:focus {
+  outline: none;
+  background: transparent;
+  text-decoration: underline;
+  color: white;
+}
+.card {
+  background: transparent;
+}
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #01501cbb !important;
+}
+.btn-primary:hover {
+  background-color: rgba(0, 64, 80, 0.466) !important;
+  color: #c3ffd8bb !important;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat120.cur), auto !important;
+}
