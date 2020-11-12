@@ -5,15 +5,6 @@ import "../App.css";
 import { Col, Row, Container } from "../components/Grid";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 const Home = () => {
-  let user = "(change this to each user)";
-  function addElement() {
-    const element = document.getElementById("root");
-    element.classList.add("bg");
-    element.classList.add("bg bg2");
-    element.classList.add("bg bg3");
-    element.classList.add("content");
-  }
-
   return (
     <div>
       <Container fluid>
