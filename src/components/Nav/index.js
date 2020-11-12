@@ -2,78 +2,95 @@ import React from "react";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Navbar
-      </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <i
+        class=" fas fa-cannabis"
+        href="#"
+        style={{
+          textDecoration: "underline",
+          color: "green",
+        }}
+      >
+        SMKR
+      </i>
       <button
-        className="navbar-toggler"
+        class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
+        data-target="#navbarText"
+        aria-controls="navbarText"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span className="sr-only">(current)</span>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              Home <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Link
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Friends
             </a>
           </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Messages
             </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
           </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="#">
-              Disabled
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Weedipedia
             </a>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          ></input>
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
+        <li
+          class="nav-item dropdown"
+          style={{
+            listStyleType: "none",
+          }}
+        >
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            style={{
+              color: "green",
+            }}
           >
-            Search
-          </button>
-        </form>
+            {" "}
+            Options
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a
+              class="dropdown-item"
+              href="#"
+              style={{
+                color: " #ff6ec7 ",
+              }}
+            >
+              <i class="fas fa-cannabis" id="dankLeaf">
+                {" "}
+              </i>{" "}
+              Dank Mode{" "}
+              <i class="fas fa-cannabis" id="dankLeaf">
+                {" "}
+              </i>
+            </a>
+            <a class="dropdown-item" href="#">
+              Account Settings
+            </a>
+            <a class="dropdown-item" href="#">
+              Contact Us
+            </a>
+          </div>{" "}
+        </li>
       </div>
     </nav>
   );

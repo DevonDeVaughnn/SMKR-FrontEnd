@@ -4,12 +4,11 @@ import Form from "../components/Form/friendsForm";
 import "../App";
 
 function FriendsPage() {
-    return (
-      <div>
-        <Form />
-      </div>
-    );
-  }
-  
-  export default FriendsPage;
-  
+  return (
+    <div>
+      <Form />
+    </div>
+  );
+}
+
+export default FriendsPage;
