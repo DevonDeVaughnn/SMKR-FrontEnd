@@ -8,7 +8,7 @@ class FriendListApp extends Component {
     this.state = { friends: [] };
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     var name = this.refs.name.value;
     var age = this.refs.age.value;
@@ -19,17 +19,17 @@ class FriendListApp extends Component {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, age })
+      body: JSON.stringify({ name, age }),
     })
-      .then(res => res.json())
-      .then(response => {
-        friendsTemp.push(response.data)
-        this.setState({ friends: friendsTemp })
-        this.refs.name.value = ""
-        this.refs.age.value = ""
-        console.log(response)
-      })
-  }
+      .then((res) => res.json())
+      .then((response) => {
+        friendsTemp.push(response.data);
+        this.setState({ friends: friendsTemp });
+        this.refs.name.value = "";
+        this.refs.age.value = "";
+        console.log(response);
+      });
+  };
 
   render() {
     return (
