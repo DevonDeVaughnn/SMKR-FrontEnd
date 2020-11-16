@@ -1,12 +1,21 @@
-/* Will be just like the profile page but only contains links to their stuff
-it will also show their liked movies and recommended weed*/
+/*
+-It will have a navbar
+-user picture in middle(future dev)
+-Under the nav bar will be three boxes with random weeds and their positive 
+    -tell axios to grab three random strains from the db and put them in an array
+    - for each in the array create a card 
+-Directly under that, will be a stream of users input
+-on the right side of the page will be random memes
+-on the left side will be random movie quotes
+-possible spotify on bottom middle
+*/
 import React from "react";
 import Nav from "../components/Nav/index";
 
 import "../App.css";
 import { Col, Row, Container } from "../components/Grid";
 
-const Friends = () => {
+const Home = () => {
   return (
     <div>
       <Container fluid>
@@ -72,9 +81,9 @@ const Friends = () => {
                 marginTop: "150px",
               }}
             />
-            <h5>This will be the friends name</h5>
+            <h5>This will be the users name</h5>
             <hr />
-            <h1>This will be friends stream</h1>
+            <h1>This will be users stream</h1>
 
             <hr />
             <h2>
