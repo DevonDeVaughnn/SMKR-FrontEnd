@@ -6,7 +6,7 @@ import Nav from "../components/Nav/index";
 import "../App.css";
 import { Col, Row, Container } from "../components/Grid";
 
-const Home = () => {
+const Friends = () => {
   return (
     <div>
       <Container fluid>
