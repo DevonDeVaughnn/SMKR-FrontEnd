@@ -78,7 +78,9 @@ const Friends = () => {
 
             <hr />
             <h2>
-              This will be three boxes with cards of their fav three strands
+              This will be three boxes with cards of their fav three strands.
+              Should take information from strain index and create cards from
+              what user clicked like on
             </h2>
           </Col>
           <Col size="md-3" className="column">
@@ -135,4 +137,4 @@ const Friends = () => {
     </div>
   );
 };
-export default Home;
+export default Friends;
