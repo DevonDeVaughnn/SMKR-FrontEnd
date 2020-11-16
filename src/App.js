@@ -1,20 +1,35 @@
 //import logo from "./logo.svg";
 import React from "react";
-import "./App.css";
-import UserSign from "./pages/SignUp";
+import UserContext from "../src/userContext/UserContext";
+//import UserSign from "./pages/SignUp";
+//import StrainCard from "./pages/StrainCard"
+//import Messages from "./pages/Messages"
+import Profile from "./pages/Profile";
 import FriendsPage from "./pages/Friends";
 import Home from "./pages/Home";
-import Strain from "../src/pages/Strain";
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import StrainSearch from "./pages/Straindex";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Home />
-      {/* <UserSign /> */}
-      {/* <FriendsPage /> */}
-      {/* <Strain /> */}
-    </div>
+    <>
+      <Router>
+        <UserContext.Provider>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/register" component={} /> */}
+            {/* <Route exact path="/login" component={} /> */}
+            <Route exact path="/:id" component={Profile} />
+            <Route exact path="/friends/:id" component={FriendsPage} />
+            <Route exact path="/straindex" component={StrainSearch} />
+            {/* <Route exact path="/messages" component={Messages} /> */}
+            {/* <Route exact path="/straindex/:id" component={StrainCard} /> */}
+            {/* <Route exact path="/straindex/:id" component={AccountSettings} /> */}
+            {/* <Route exact path="/straindex/:id" component={Contact /> */}
+          </Switch>
+        </UserContext.Provider>
+      </Router>
+    </>
   );
 }
 

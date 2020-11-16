@@ -1,36 +1,8 @@
 import React, { Component } from "react";
 
-const API_BASE = "http://rest.learncode.academy/api/efa/friends";
+class FriendSearch extends Component {
 
-class FriendListApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { friends: [] };
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    var name = this.refs.name.value;
-    var age = this.refs.age.value;
-    var friendsTemp = this.state.friends;
-
-    fetch(API_BASE, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, age }),
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        friendsTemp.push(response.data);
-        this.setState({ friends: friendsTemp });
-        this.refs.name.value = "";
-        this.refs.age.value = "";
-        console.log(response);
-      });
-  };
-
+  
   render() {
     return (
       <div className="main">
@@ -66,4 +38,4 @@ class FriendListApp extends Component {
   }
 }
 
-export default FriendListApp;
+export default FriendSearch;
