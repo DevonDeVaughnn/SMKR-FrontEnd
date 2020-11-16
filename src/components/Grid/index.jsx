@@ -30,9 +30,51 @@ export function Col({ size, children }) {
   return (
     <div
       className={size
-        .split(" ")
-        .map((size) => "col-" + size)
-        .join(" ")}
+        // .split(" ")
+        // .map((size) => "col-" + size)
+        // .join(" ")}
+      }
+    >
+      {children}
+    </div>
+  );
+}
+export function Input({ size, children }) {
+  return (
+    <div
+      className={size
+        // .split(" ")
+        // .map((size) => "col-" + size)
+        // .join(" ")}
+      }
+    >
+      {children}
+    </div>
+  );
+}
+
+export function Icon({ size, children }) {
+  return (
+    <div
+      className={size
+        // .split(" ")
+        // .map((size) => "col-" + size)
+        // .join(" ")}
+      }
+    >
+      {children}
+    </div>
+  );
+}
+
+export function Btn({ size, children }) {
+  return (
+    <div
+      className={size
+        // .split(" ")
+        // .map((size) => "col-" + size)
+        // .join(" ")}
+      }
     >
       {children}
     </div>
