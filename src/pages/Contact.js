@@ -30,44 +30,6 @@ class ContactUs extends Component {
             
             <p>Write to us.</p>
             </div>
-
-            <div
-              className="card-body text-center "
-              style={{
-                color: "black",
-                textAlign: "center"
-              }}
-            >
-              <label htmlFor="username">Username: </label>
-              <input
-                style={{
-                  marginLeft: "1em",
-                  border: "none",
-                }}
-                type="text"
-                id="username"
-                name="username"
-              />
-
-              <div
-                className="card-body text-center"
-                style={{
-                  color: "black",
-                }}
-              >
-                <label htmlFor="email">E-Mail: </label>
-                <input
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "1em",
-                    border: "none",
-                  }}
-                  type="text"
-                  id="email"
-                  name="email"
-                  // onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
               <div
                 className="card-body text-center"
                 style={{
@@ -79,7 +41,11 @@ class ContactUs extends Component {
                   style={{
                     textAlign: "center",
                     marginLeft: "1em",
-                    border: "none",
+                    border: "green solid",
+                    height: "200px",
+                    width: "300px",
+                  
+                    
                   }}
                   type="text"
                   id="message"
@@ -92,8 +58,7 @@ class ContactUs extends Component {
                 style={{
                   color: "black",
                 }}
-              ></div>
-
+              >
               <button
                 className="btn btn-primary"
                 type="submit"
@@ -102,14 +67,14 @@ class ContactUs extends Component {
                 style={{
                   textAlign: "center",
                   position: "center",
-                  border: "none",
+                  border: "black solid",
 
                   fontFamily: "Playfair Display, serif",
                 }}
               >
                 <i className="fas fa-cannabis"></i>
               </button>
-            </div>
+              </div>
           </Form>
         </div>
       </Container>
