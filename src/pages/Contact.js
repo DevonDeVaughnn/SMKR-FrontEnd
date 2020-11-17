@@ -19,17 +19,23 @@ class ContactUs extends Component {
       >
         <div className="card" style={{ width: "24rem" }}>
           <Form id="form">
-            <div>
-              <div className="card-img-top myImage"></div>
-              <br></br>
-            </div>
+          <div
+              className="card-body text-center "
+              style={{
+                color: "black",
+                textAlign: "center"
+              }}
+            >
             <h4>Welcome to SMKR. </h4>
+            
             <p>Write to us.</p>
+            </div>
 
             <div
               className="card-body text-center "
               style={{
                 color: "black",
+                textAlign: "center"
               }}
             >
               <label htmlFor="username">Username: </label>
