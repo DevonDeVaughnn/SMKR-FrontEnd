@@ -19,31 +19,22 @@ class ContactUs extends Component {
       >
         <div className="card" style={{ width: "24rem" }}>
           <Form id="form">
-            <div
+          <div
               className="card-body text-center "
               style={{
                 color: "black",
-                textAlign: "center",
+                textAlign: "center"
               }}
             >
-              <h4>Welcome to SMKR. </h4>
-
-              <p>Write to us.</p>
+            <h4>Welcome to SMKR. </h4>
+            
+            <p>Write to us.</p>
             </div>
 
-            <div
-              className="card-body text-center "
-              style={{
-                color: "black",
-                textAlign: "center",
-              }}
-            >
-              <div
-                className="card-body text-center"
-                style={{
-                  color: "black",
-                }}
-              ></div>
+
+
+
+
               <div
                 className="card-body text-center"
                 style={{
@@ -55,7 +46,11 @@ class ContactUs extends Component {
                   style={{
                     textAlign: "center",
                     marginLeft: "1em",
-                    border: "none",
+                    border: "green solid",
+                    height: "200px",
+                    width: "300px",
+                  
+                    
                   }}
                   type="text"
                   id="message"
@@ -68,8 +63,7 @@ class ContactUs extends Component {
                 style={{
                   color: "black",
                 }}
-              ></div>
-
+              >
               <button
                 className="btn btn-primary"
                 type="submit"
@@ -78,14 +72,14 @@ class ContactUs extends Component {
                 style={{
                   textAlign: "center",
                   position: "center",
-                  border: "none",
+                  border: "black solid",
 
                   fontFamily: "Playfair Display, serif",
                 }}
               >
                 <i className="fas fa-cannabis"></i>
               </button>
-            </div>
+              </div>
           </Form>
         </div>
       </Container>
