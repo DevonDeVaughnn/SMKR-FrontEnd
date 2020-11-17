@@ -7,7 +7,7 @@ import Profile from "./pages/Profile";
 // import FriendsPage from "./pages/Friends";
 import Home from "./pages/Home";
 import StrainSearch from "./pages/Straindex";
-import Contact from "./pages/Contact"
+import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ContactUs from "./pages/Contact";
 
@@ -17,7 +17,7 @@ function App() {
       <Router>
         <UserContext.Provider>
           <Switch>
-            {/* <Route exact path="/" component={Home} /> */}
+            <Route exact path="/" component={Home} />
             {/* <Route exact path="/register" component={} /> */}
             {/* <Route exact path="/login" component={} /> */}
             {/* <Route exact path="/:id" component={Profile} /> */}
