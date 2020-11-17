@@ -19,55 +19,31 @@ class ContactUs extends Component {
       >
         <div className="card" style={{ width: "24rem" }}>
           <Form id="form">
-          <div
+            <div
               className="card-body text-center "
               style={{
                 color: "black",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
-            <h4>Welcome to SMKR. </h4>
-            
-            <p>Write to us.</p>
+              <h4>Welcome to SMKR. </h4>
+
+              <p>Write to us.</p>
             </div>
 
             <div
               className="card-body text-center "
               style={{
                 color: "black",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
-              <label htmlFor="username">Username: </label>
-              <input
-                style={{
-                  marginLeft: "1em",
-                  border: "none",
-                }}
-                type="text"
-                id="username"
-                name="username"
-              />
-
               <div
                 className="card-body text-center"
                 style={{
                   color: "black",
                 }}
-              >
-                <label htmlFor="email">E-Mail: </label>
-                <input
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "1em",
-                    border: "none",
-                  }}
-                  type="text"
-                  id="email"
-                  name="email"
-                  // onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
+              ></div>
               <div
                 className="card-body text-center"
                 style={{
