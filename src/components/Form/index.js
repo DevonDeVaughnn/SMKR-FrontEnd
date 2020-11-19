@@ -1,31 +1,40 @@
-import React from "react";
+import React, { Component } from "react";
 
-// This file exports the Input, TextArea, and FormBtn components
+class FriendSearch extends Component {
+  render() {
+    return (
+      <div className="main">
+        <div className="mainDiv">
+          <Nav />
+          <form>
+            <h3>Find a SMKR!</h3>
+            <fieldset className="form-group">
+              <label>SMKR's Name:</label>
+              <input
+                type="text"
+                ref="name"
+                name="name"
+                className="form-control"
+              />
+            </fieldset>
 
-export function Input(props) {
-  return (
-    <div className="form-group">
-      <input className="form-control" {...props} />
-    </div>
-  );
+            <fieldset className="form-group">
+              <label>SMKR's Email:</label>
+              <input
+                type="text"
+                ref="email"
+                name="email"
+                className="form-control"
+              />
+            </fieldset>
+            <button className="btn btn-success" type="submit">
+              Find SMKR
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
 
-export function TextArea(props) {
-  return (
-    <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
-    </div>
-  );
-}
-
-export function FormBtn(props) {
-  return (
-    <button
-      {...props}
-      style={{ float: "right", marginBottom: 10 }}
-      className="btn btn-success"
-    >
-      {props.children}
-    </button>
-  );
-}
+export default FriendSearch;

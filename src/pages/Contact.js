@@ -19,51 +19,45 @@ class ContactUs extends Component {
       >
         <div className="card" style={{ width: "24rem" }}>
           <Form id="form">
-          <div
+            <div
               className="card-body text-center "
               style={{
                 color: "black",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
-            <h4>Welcome to SMKR. </h4>
-            
-            <p>Write to us.</p>
+              <h4>Welcome to SMKR. </h4>
+
+              <p>Write to us.</p>
             </div>
 
-
-
-
-
-              <div
-                className="card-body text-center"
+            <div
+              className="card-body text-center"
+              style={{
+                color: "black",
+              }}
+            >
+              <label htmlFor="message">Message: </label>
+              <input
                 style={{
-                  color: "black",
+                  textAlign: "center",
+                  marginLeft: "1em",
+                  border: "green solid",
+                  height: "200px",
+                  width: "300px",
                 }}
-              >
-                <label htmlFor="message">Message: </label>
-                <input
-                  style={{
-                    textAlign: "center",
-                    marginLeft: "1em",
-                    border: "green solid",
-                    height: "200px",
-                    width: "300px",
-                  
-                    
-                  }}
-                  type="text"
-                  id="message"
-                  name="message"
-                />
-              </div>
+                type="text"
+                id="message"
+                name="message"
+              />
+            </div>
 
-              <div
-                className="card-body text-center"
-                style={{
-                  color: "black",
-                }}
-              >
+            <div
+              className="card-body text-center"
+              style={{
+                color: "black",
+              }}
+            >
               <button
                 className="btn btn-primary"
                 type="submit"
@@ -79,7 +73,7 @@ class ContactUs extends Component {
               >
                 <i className="fas fa-cannabis"></i>
               </button>
-              </div>
+            </div>
           </Form>
         </div>
       </Container>

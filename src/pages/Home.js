@@ -1,157 +1,53 @@
-import React from "react";
+import React, { Component } from "react";
+import { setState } from "react-dom";
 import Nav from "../components/Nav/index";
-import user from "./SignUp";
+import Jumbotron from "../components/Jumbotron";
+import NotUserJumbotron from "../components/Jumbotron";
+import InfoCards from "../components/Card";
+import Factoid from "../components/Factoid";
 import "../App.css";
 import { Col, Row, Container } from "../components/Grid";
+import axios from "axios";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-const Home = () => {
-  return (
-    <div>
-      <Container fluid>
-        <Row>
-          <Col size="md-3" className="column">
-            <h2>Weed Shops</h2>
 
-            <ul
-              style={{
-                listStyleType: "none",
-                paddingTop: "30px",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-          </Col>
+export default class Home extends Component {
+  state = {
+    user: "",
+    date: Date.now(),
+  };
+  componentDidMount() {
+    const config = {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    };
+    axios.get("/home", config).then(
+      (res) => {
+        this.setState({
+          user: res.data,
+        });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 
-          <Col size="md-6" className="column">
-            <Nav />
-            <h4 id="greeting">{user}, what are we SMKN?</h4>
-            <textarea id="posts"></textarea>
-            <hr />
-            <h1>This will be a friends stream</h1>
-
-            <button
-              type="button"
-              class="btn  btn-outline-primary"
-              style={{
-                color: "green",
-                borderColor: "green",
-              }}
-            >
-              <p>In Flight Movie</p>
-            </button>
-            <hr />
-            <h2>This will be a square box that pulls movie recommendation</h2>
-          </Col>
-          <Col size="md-3" className="column">
-            <h2>Food options</h2>
-            <ul
-              style={{
-                listStyleType: "none",
-                paddingTop: "30px",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
-};
-export default Home;
+  render() {
+    return (
+      <div>
+        <Container fluid>
+          <Row>
+            <Col size="md-12" className="column">
+              <Nav />
+              <Jumbotron billy="goat" userData={this.state.user} />
+              <p>This works</p>
+              <InfoCards />
+              <Factoid />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+}
