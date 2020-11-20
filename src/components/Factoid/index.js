@@ -9,7 +9,7 @@ function Factoids() {
   return (
     <div class="media">
       <div class="media-body">
-        <h5 class="mt-0">Random Fact</h5>
+        <h5 class="mt-0">You know...They say...</h5>
         <h6>{displayRandomFact}</h6>
       </div>
     </div>

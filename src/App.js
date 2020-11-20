@@ -5,7 +5,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Straindex from "./pages/Straindex";
+import AccountSettings from "./pages/AccountSettings";
+import OMDB from "./components/Api/OMDB/OMDB";
+import Straindex from "./pages/StrainCards";
 // import Messages from "./pages/Messages"
 import Profile from "./pages/Profile";
 
@@ -21,7 +23,9 @@ class App extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/ombd" component={OMDB} />
             <Route exact path="/straindex" component={Straindex} />
+            <Route exact path="/account" component={AccountSettings} />
 
             {/* <Route exact path="/account/:id" component={AccountSettings} /> */}
           </Switch>

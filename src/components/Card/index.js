@@ -47,14 +47,14 @@ function InfoCards() {
             <h5 class="card-title ">{randomStrain4}</h5>
             <p class="card-text">
               <span className="cardText">{strainPositiveInfo4}</span>
-            </p>
-            <a class="card-text">
-              <small
-                class="text-muted"
-                href="https://www.cdc.gov/marijuana/health-effects.html"
-              >
-                Learn more from the CDC
-              </small>
+            </p>{" "}
+            <button>Reccommend</button>
+            <a
+              class="card-text"
+              href="https://www.cdc.gov/marijuana/health-effects.html"
+            >
+              <hr />
+              <small class="text-muted">Learn more from the CDC</small>
             </a>
           </div>
         </div>
@@ -68,14 +68,14 @@ function InfoCards() {
             <h5 class="card-title ">{randomStrain1}</h5>
             <p class="card-text">
               <span className="cardText">{strainPositiveInfo1}</span>
-            </p>
-            <a class="card-text">
-              <small
-                class="text-muted"
-                href="https://www.cdc.gov/marijuana/health-effects.html"
-              >
-                Learn more from the CDC
-              </small>
+            </p>{" "}
+            <button>Reccommend</button>
+            <hr />
+            <a
+              class="card-text"
+              href="https://www.cdc.gov/marijuana/health-effects.html"
+            >
+              <small class="text-muted">Learn more from the CDC</small>
             </a>
           </div>
         </div>
@@ -88,6 +88,8 @@ function InfoCards() {
           <div class="card-body">
             <h5 class="card-title">{randomStrain2}</h5>
             <p class="card-text">{strainPositiveInfo2}</p>
+            <button>Reccommend</button>
+            <hr />
             <a
               class="card-text"
               href="https://www.cdc.gov/marijuana/health-effects.html"
@@ -104,7 +106,9 @@ function InfoCards() {
           ></img>
           <div class="card-body">
             <h5 class="card-title">{randomStrain3}</h5>
-            <p class="card-text">{strainPositiveInfo3}</p>
+            <p class="card-text">{strainPositiveInfo3}</p>{" "}
+            <button>Reccommend</button>
+            <hr />
             <a
               class="card-text"
               href="https://www.cdc.gov/marijuana/health-effects.html"

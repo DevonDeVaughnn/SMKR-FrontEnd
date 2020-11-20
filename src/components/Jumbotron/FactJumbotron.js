@@ -7,7 +7,9 @@ class BottomJumbotron extends Component {
     return (
       <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid">
-          <h1 class="display-4"></h1>
+          <h1 class="display-4">
+            <i className="fas fa-cannabis fa-3x"></i>
+          </h1>
           <h2 class="lead">
             <Factoid />
           </h2>
