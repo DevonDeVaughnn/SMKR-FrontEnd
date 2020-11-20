@@ -6,7 +6,7 @@ import BottomJumbotron from "../components/Jumbotron/FactJumbotron";
 import InfoCards from "../components/Card";
 import Factoid from "../components/Factoid";
 import "../components/AppCss/style.css";
-
+import "../";
 import { Col, Row, Container, Button } from "react-bootstrap";
 import axios from "axios";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
