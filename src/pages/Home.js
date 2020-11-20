@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { setState } from "react-dom";
 import Nav from "../components/Nav/index";
 import Jumbotron from "../components/Jumbotron";
-import NotUserJumbotron from "../components/Jumbotron";
+import BottomJumbotron from "../components/Jumbotron/FactJumbotron";
 import InfoCards from "../components/Card";
 import Factoid from "../components/Factoid";
-import "../App.css";
-import { Col, Row, Container } from "../components/Grid";
+import "../components/AppCss/style.css";
+
+import { Col, Row, Container, Button } from "react-bootstrap";
 import axios from "axios";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -36,14 +37,17 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Container fluid>
+        <Container fluid className="home-container">
           <Row>
             <Col size="md-12" className="column">
               <Nav />
-              <Jumbotron billy="goat" userData={this.state.user} />
-              <p>This works</p>
+              <Jumbotron userData={this.state.user} />
               <InfoCards />
-              <Factoid />
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-12" className="column">
+              <BottomJumbotron />
             </Col>
           </Row>
         </Container>

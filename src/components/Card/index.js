@@ -13,14 +13,20 @@ function InfoCards() {
   const randomStrain3 = Object.keys(strains)[
     Math.floor(Math.random() * Object.keys(strains).length)
   ];
+  const randomStrain4 = Object.keys(strains)[
+    Math.floor(Math.random() * Object.keys(strains).length)
+  ];
   const strainPositiveInfo1 = [
     Object(strains[randomStrain1].effects.positive[0]),
   ];
   const strainPositiveInfo2 = [
-    Object(strains[randomStrain2].effects.positive[0]),
+    Object(strains[randomStrain2].effects.positive[1]),
   ];
   const strainPositiveInfo3 = [
     Object(strains[randomStrain3].effects.positive[0]),
+  ];
+  const strainPositiveInfo4 = [
+    Object(strains[randomStrain4].effects.positive[2]),
   ];
 
   return (
@@ -31,6 +37,27 @@ function InfoCards() {
           width: "20rem",
         }}
       >
+        <div class="strainInfo ">
+          <img
+            src="https://picsum.photos/200/"
+            class="strainCard"
+            alt="Weed Recipe"
+          ></img>
+          <div class="card-body">
+            <h5 class="card-title ">{randomStrain4}</h5>
+            <p class="card-text">
+              <span className="cardText">{strainPositiveInfo4}</span>
+            </p>
+            <a class="card-text">
+              <small
+                class="text-muted"
+                href="https://www.cdc.gov/marijuana/health-effects.html"
+              >
+                Learn more from the CDC
+              </small>
+            </a>
+          </div>
+        </div>
         <div class="strainInfo ">
           <img
             src="https://picsum.photos/200/"

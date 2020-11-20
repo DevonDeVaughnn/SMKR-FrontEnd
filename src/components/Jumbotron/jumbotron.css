@@ -1,5 +1,7 @@
 .jumbotron {
   width: 100%;
   text-align: center;
-  border: 0.5px solid green;
+  border-bottom: 3px solid rgb(49, 58, 49);
+  background-color: rgba(2, 29, 2, 0.459);
+  border-radius: 10px;
 }
