@@ -1,140 +1,59 @@
-/* Will be just like the profile page but only contains links to their stuff
-it will also show their liked movies and recommended weed*/
 import React from "react";
 import Nav from "../components/Nav/index";
+import FriendJumbotron from "../components/Jumbotron/friendsJumbotron";
 
-import "../App.css";
-import { Col, Row, Container } from "../components/Grid";
+import "../components/Profiles/style.css";
+import { Col, Row, Container } from "react-bootstrap";
 
-const Friends = () => {
+const Profile = () => {
   return (
     <div>
-      <Container fluid>
+      <Container>
         <Row>
-          <Col size=" md-3" className="column">
-            <h2>Random bad movie posters</h2>
-
-            <ul
-              style={{
-                listStyleType: "none",
-                paddingTop: "150px",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
+          <Nav />
+        </Row>
+        <Row>
+          <FriendJumbotron />
+        </Row>
+        <Row>
+          <Col className="columns spotify-widget">Spotify widget</Col>
+        </Row>
+        <Row className="rows">
+          <Col className="columns profile-picture" lg={12}>
+            <img src="https://picsum.photos/200"></img>
+            <h4>Friend's Name</h4>
           </Col>
-
-          <Col size="md-6" className="column">
-            <Nav />
-            <img
-              src="https://picsum.photos/400"
-              alt=""
-              style={{
-                border: "5px solid #555",
-                borderRadius: "10px",
-                marginTop: "150px",
-              }}
-            />
-            <h5>This will be the friends name</h5>
-            <hr />
-            <h1>This will be friends stream</h1>
-
-            <hr />
-            <h2>
-              This will be three boxes with cards of their fav three strands.
-              Should take information from strain index and create cards from
-              what user clicked like on
-            </h2>
+        </Row>
+        <Row>
+          <Col className="columns" lg={6}>
+            Cards with their liked recipes and strains
           </Col>
-          <Col size="md-3" className="column">
-            <h2>Food options</h2>
-            <ul
-              style={{
-                listStyleType: "none",
-                paddingTop: "150px",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
+          <Col className="columns">Shops</Col>
+          <Col className="columns">Food</Col>
+        </Row>
+        <Row>
+          <Col className="columns liked-row" lg={12}>
+            Three cards of their previously liked recipes/strains
+          </Col>
+        </Row>
+        <Row>
+          <Col className="columns movie-column-button">
+            <button className="btn btn-primary display-movie-btn">
+              Press this button to show your friends your recommendations
+            </button>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="columns movie-column">
+            <div className="jumbotron jumbotron-fluid movie-jumbotron">
+              <div class="container-fluid">
+                Something will go here but we will figure it out
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
     </div>
   );
 };
-export default Friends;
+export default Profile;

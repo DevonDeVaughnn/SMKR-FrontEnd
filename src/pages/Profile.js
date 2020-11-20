@@ -1,147 +1,84 @@
-/*
--It will have a navbar
--user picture in middle(future dev)
--Under the nav bar will be three boxes with random weeds and their positive 
-    -tell axios to grab three random strains from the db and put them in an array
-    - for each in the array create a card 
--Directly under that, will be a stream of users input
--on the right side of the page will be random memes
--on the left side will be random movie quotes
--possible spotify on bottom middle
-*/
 import React from "react";
 import Nav from "../components/Nav/index";
+import Jumbotron from "../components/Jumbotron";
+import axios from "axios";
+import "../components/Profiles/style.css";
+import { Col, Row, Container } from "react-bootstrap";
 
-import "../App.css";
-import { Col, Row, Container } from "../components/Grid";
+class Profile extends React.Component {
+  state = {
+    username: "",
+    password: "",
+    email: "",
+    age: "",
+    favStrains: [],
+    favRecipes: [],
+    friends: [],
+    favFacts: [],
+  };
 
-const Home = () => {
-  return (
-    <div>
-      <Container fluid>
-        <Row>
-          <Col size=" md-3" className="column">
-            <h2>Random bad movie posters</h2>
+  getUserInfo = () => {
+    axios
+      .get("/users")
+      .then(() => {
+        console.log("Data Recieved");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-            <ul
-              style={{
-                listStyleType: "none",
-                paddingTop: "150px",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-          </Col>
-
-          <Col size="md-6" className="column">
+  render() {
+    return (
+      <div>
+        <Container>
+          <Row>
             <Nav />
-            <img
-              src="https://picsum.photos/400"
-              alt=""
-              style={{
-                border: "5px solid #555",
-                borderRadius: "10px",
-                marginTop: "150px",
-              }}
-            />
-            <h5>This will be the users name</h5>
-            <hr />
-            <h1>This will be users stream</h1>
+          </Row>
+          <Row>
+            <Jumbotron />
+          </Row>
+          <Row>
+            <Col className="columns spotify-widget">Spotify widget</Col>
+          </Row>
+          <Row className="rows">
+            <Col className="columns profile-picture" lg={12}>
+              <img src="https://picsum.photos/200" alt="random pic"></img>
+              <h4>User Name</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="columns" lg={6}>
+              Cards with liked recipes and strains
+            </Col>
+            <Col className="columns">Shops</Col>
+            <Col className="columns">Food</Col>
+          </Row>
+          <Row>
+            <Col className="columns liked-row" lg={12}>
+              Three cards of previously liked recipes/strains
+            </Col>
+          </Row>
+          <Row>
+            <Col className="columns movie-column-button">
+              <button className="btn btn-primary display-movie-btn">
+                Button that grabs poster and places it inside the row below
+              </button>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="columns movie-column">
+              <div className="jumbotron jumbotron-fluid movie-jumbotron">
+                <div class="container-fluid">
+                  image that takes up width of col displays movies
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+}
 
-            <hr />
-            <h2>
-              This will be three boxes with cards of their fav three strands
-            </h2>
-          </Col>
-          <Col size="md-3" className="column">
-            <h2>Food options</h2>
-            <ul
-              style={{
-                listStyleType: "none",
-                paddingTop: "150px",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-            <ul
-              style={{
-                listStyleType: "none",
-              }}
-            >
-              <li>
-                <a href="#" id="shops">
-                  <img src="https://picsum.photos/200" alt="" />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
-};
-export default Home;
+export default Profile;

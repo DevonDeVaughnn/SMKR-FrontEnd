@@ -23,9 +23,8 @@ export function Container({ fluid, children }) {
 export function Row({ fluid, children }) {
   return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
 }
-
 export function Form({ fluid, children }) {
-  return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
+  return <div className={`form${fluid ? "-fluid" : ""}`}>{children}</div>;
 }
 
 // This Col component lets us size bootstrap columns with less syntax
@@ -33,56 +32,25 @@ export function Form({ fluid, children }) {
 export function Col({ size, children }) {
   return (
     <div
-      className={
-        size
-        // .split(" ")
-        // .map((size) => "col-" + size)
-        // .join(" ")}
-      }
+      className={size
+        .split(" ")
+        .map((size) => "col-" + size)
+        .join(" ")}
     >
       {children}
     </div>
   );
 }
-export function Input({ size, children }) {
+export function Info({ fluid, children }) {
   return (
     <div
-      className={
-        size
-        // .split(" ")
-        // .map((size) => "col-" + size)
-        // .join(" ")}
-      }
-    >
-      {children}
-    </div>
-  );
-}
-
-export function Icon({ size, children }) {
-  return (
-    <div
-      className={
-        size
-        // .split(" ")
-        // .map((size) => "col-" + size)
-        // .join(" ")}
-      }
-    >
-      {children}
-    </div>
-  );
-}
-
-export function Btn({ size, children }) {
-  return (
-    <div
-      className={
-        size
-        // .split(" ")
-        // .map((size) => "col-" + size)
-        // .join(" ")}
-      }
+      className={`card-deck${fluid ? "-fluid" : ""}`}
+      style={{
+        display: "flex",
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       {children}
     </div>
