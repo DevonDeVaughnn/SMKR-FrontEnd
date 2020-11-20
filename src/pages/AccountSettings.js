@@ -153,12 +153,3 @@ export default class AccountSetting extends Component {
     );
   }
 }
-
-// const id = req.params.id;
-// User.findByIdAndDelete(id, function (err, user) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log("deleted", user);
-//   }
-// });
