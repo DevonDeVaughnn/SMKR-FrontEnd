@@ -49,15 +49,27 @@ class Profile extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col className="columns" lg={6}>
+            <Col className="columns" lg={12}>
               <InfoCards />
             </Col>
-            <Col className="columns">Shops</Col>
-            <Col className="columns">Food</Col>
+          </Row>
+          <Row className="text-center">
+            <Col className="columns text-center shops">
+              <h4>Shops</h4>
+              <Row className="shops">Shop 1</Row>
+              <Row className="shops">Shop 2</Row>
+              <Row className="shops">Shop 3</Row>
+            </Col>
+            <Col className="columns">
+              <h4>Food</h4>
+              <Row className="food">Restaurant 1</Row>
+              <Row className="food">Restaurant 2</Row>
+              <Row className="food">Restaurant 3</Row>
+            </Col>
           </Row>
           <Row>
             <Col className="columns liked-row" lg={12}>
-              Three cards of previously liked recipes/strains
+              <InfoCards />
             </Col>
           </Row>
           <Row>

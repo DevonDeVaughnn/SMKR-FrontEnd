@@ -22,13 +22,18 @@ class Nav extends Component {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <Link to="#" class="nav-link">
+              <Link to="/home" class="nav-link">
                 Home <span class="sr-only">(current)</span>
               </Link>
             </li>
             <li class="nav-item">
               <Link to="/profile" class="nav-link">
                 My Profile
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/profile" class="nav-link">
+                Reccomendations
               </Link>
             </li>
 
