@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav/index";
 import Jumbotron from "../components/Jumbotron";
+import InfoCards from "../components/Card";
 import axios from "axios";
 import "../components/Profiles/style.css";
 import { Col, Row, Container } from "react-bootstrap";
@@ -13,7 +14,7 @@ class Profile extends React.Component {
     age: "",
     favStrains: [],
     favRecipes: [],
-    friends: [],
+
     favFacts: [],
   };
 
@@ -49,7 +50,7 @@ class Profile extends React.Component {
           </Row>
           <Row>
             <Col className="columns" lg={6}>
-              Cards with liked recipes and strains
+              <InfoCards />
             </Col>
             <Col className="columns">Shops</Col>
             <Col className="columns">Food</Col>

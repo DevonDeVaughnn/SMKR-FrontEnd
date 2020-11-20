@@ -5,7 +5,7 @@ import "./nav.css";
 class Nav extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="navbar-brand">SMKR</div>
         <button
           class="navbar-toggler"
@@ -31,16 +31,7 @@ class Nav extends Component {
                 My Profile
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/friends" class="nav-link">
-                Friends
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to="/home" class="nav-link">
-                Messages (Not Functioning)
-              </Link>
-            </li>
+
             <li class="nav-item dropdown">
               <Link
                 to="#"
@@ -57,9 +48,7 @@ class Nav extends Component {
                 <Link to="/straindex" class="dropdown-item">
                   Strain Library
                 </Link>
-                <Link to="/home" class="dropdown-item">
-                  Reccomend (No page yet)
-                </Link>
+
                 <Link to="/home" class="dropdown-item">
                   Account Settings (No page yet)
                 </Link>

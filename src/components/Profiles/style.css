@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100%;
+  font-family: "Playfair Display", serif;
+
+  background-position: center;
+  color: rgb(225, 251, 225);
+}
+
 .container {
   border: 1px solid green;
 }
@@ -7,9 +18,6 @@
   height: 200px;
   margin: 0 auto;
   display: block;
-}
-.row {
-  border: 2px solid green;
 }
 
 .movie-jumbotron {

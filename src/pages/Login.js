@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Row, Container, Form, Col, Button } from "react-bootstrap";
-import WelcomeJumbotron from "../components/Jumbotron/welcomeJumbotron";
+import { Row, Container, Form, Col, Button, Card } from "react-bootstrap";
+import LoginJumbotron from "../components/Jumbotron/loginJumbotron";
+import "../components/Form/form.css";
 
 //import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -23,9 +24,9 @@ export default class Login extends Component {
   };
   render() {
     return (
-      <Container fluid>
+      <Container fluid className="card card-text center">
         <Row>
-          <WelcomeJumbotron />
+          <LoginJumbotron />
         </Row>
         <Row>
           <Col size="md-12" className="column">
@@ -46,11 +47,12 @@ export default class Login extends Component {
               <br />
             </Form.Group>
             <Button
-              className="btn btn-primary btn-block"
+              className="btn btn-block"
               type="submit"
+              style={{ marginBottom: "70px" }}
               onClick={this.handleSubmit}
             >
-              Log-In
+              <i className="fa fa-cannabis" style={{ color: "whitesmoke" }}></i>
             </Button>
           </Col>
         </Row>
