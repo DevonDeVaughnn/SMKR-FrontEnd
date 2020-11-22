@@ -13,9 +13,6 @@ class Profile extends React.Component {
     email: "",
     age: "",
     favStrains: [],
-    favRecipes: [],
-
-    favFacts: [],
   };
 
   getUserInfo = () => {
@@ -67,11 +64,7 @@ class Profile extends React.Component {
               <Row className="food">Restaurant 3</Row>
             </Col>
           </Row>
-          <Row>
-            <Col className="columns liked-row" lg={12}>
-              <InfoCards />
-            </Col>
-          </Row>
+
           <Row>
             <Col className="columns movie-column-button">
               <button className="btn btn-primary display-movie-btn">
@@ -82,7 +75,7 @@ class Profile extends React.Component {
           <Row>
             <Col className="columns movie-column">
               <div className="jumbotron jumbotron-fluid movie-jumbotron">
-                <div class="container-fluid">
+                <div className="container-fluid">
                   image that takes up width of col displays movies
                 </div>
               </div>

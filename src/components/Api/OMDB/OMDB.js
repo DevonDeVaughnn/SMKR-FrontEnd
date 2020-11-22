@@ -49,28 +49,6 @@ export default class OMDB extends Component {
     console.log("hey:", this.state.randomMovie);
   }
 
-  // async handleClick() {
-  //   let movie = Math.floor(Math.random() * 2155529 + 1);
-  //   let queryURL = `http://www.omdbapi.com/?i=tt${movie}&apikey=989099eb`;
-  //   const newMovieRand = axios({
-  //     url: queryURL,
-  //     method: "GET",
-  //   }).then(function (response) {
-  //     const newMovie = {
-  //       title: response.data.Title,
-  //       year: response.data.Year,
-  //       rating: response.data.Rating,
-  //       actors: response.data.Actors,
-  //       plot: response.data.Plot,
-  //       author: response.data.Author,
-  //     };
-  //     return newMovie;
-  //   });
-  //   this.setState({
-  //     randomMovie: newMovieRand,
-  //   });
-  // }
-
   render() {
     let result;
     if (!this.state.randomMovie.title) {
