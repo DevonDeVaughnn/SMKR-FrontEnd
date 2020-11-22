@@ -1,5 +1,7 @@
-import React from "react";
 import "./card.css";
+import React, { Component, useState, useContext } from "react";
+import axios from "axios";
+import API from "../../utils/API";
 
 import { Col, Info } from "../Grid";
 var strains = require("../Api/Strains/strains.json");
@@ -29,91 +31,90 @@ function InfoCards() {
     Object(strains[randomStrain4].effects.positive[2]),
   ];
 
+  const save = (e, req, res) => {
+    e.preventDefault();
+
+    axios
+      .post("strain")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <Col size="md-12" className="weedCard-flex">
       <Info
-        className="card-deck .d-flex justify-content-between"
+        className="card-deck"
         style={{
           width: "20rem",
         }}
       >
-        <div class="strainInfo ">
+        <div className="strainInfo ">
           <img
             src="https://picsum.photos/200/"
-            class="strainCard"
+            className="strainCard"
             alt="Weed Recipe"
           ></img>
-          <div class="card-body">
-            <h5 class="card-title ">{randomStrain4}</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title ">{randomStrain4}</h5>
+            <input
+              type={"hidden"}
+              value={randomStrain4}
+              className="hidden-strain"
+            />
+            <p className="card-text">
               <span className="cardText">{strainPositiveInfo4}</span>
             </p>{" "}
-            <button>Reccommend</button>
+            <button onClick={save}>Reccommend</button>
             <a
-              class="card-text"
+              className="card-text"
               href="https://www.cdc.gov/marijuana/health-effects.html"
             >
               <hr />
-              <small class="text-muted">Learn more from the CDC</small>
+              <small className="text-muted">Learn more from the CDC</small>
             </a>
           </div>
         </div>
-        <div class="strainInfo ">
+        <div className="strainInfo ">
           <img
             src="https://picsum.photos/200/"
-            class="strainCard"
+            className="strainCard"
             alt="Weed Recipe"
           ></img>
-          <div class="card-body">
-            <h5 class="card-title ">{randomStrain1}</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title ">{randomStrain1}</h5>
+            <p className="card-text">
               <span className="cardText">{strainPositiveInfo1}</span>
             </p>{" "}
-            <button>Reccommend</button>
+            {/* <button onClick={save}>Reccommend</button> */}
             <hr />
             <a
-              class="card-text"
+              className="card-text"
               href="https://www.cdc.gov/marijuana/health-effects.html"
             >
-              <small class="text-muted">Learn more from the CDC</small>
+              <small className="text-muted">Learn more from the CDC</small>
             </a>
           </div>
         </div>
-        <div class="strainInfo">
+        <div className="strainInfo">
           <img
             src="https://picsum.photos/200/"
-            class="strainCard"
+            className="strainCard"
             alt="Weed Top Liked"
           ></img>
-          <div class="card-body">
-            <h5 class="card-title">{randomStrain2}</h5>
-            <p class="card-text">{strainPositiveInfo2}</p>
-            <button>Reccommend</button>
+          <div className="card-body">
+            <h5 className="card-title">{randomStrain2}</h5>
+            <p className="card-text">{strainPositiveInfo2}</p>
+            {/* <button onClick={}>Reccommend</button> */}
             <hr />
             <a
-              class="card-text"
+              className="card-text"
               href="https://www.cdc.gov/marijuana/health-effects.html"
             >
-              <small class="text-muted">Learn more from the CDC</small>
-            </a>
-          </div>
-        </div>
-        <div class="strainInfo">
-          <img
-            src="https://picsum.photos/200/"
-            class="strainCard"
-            alt="Weed "
-          ></img>
-          <div class="card-body">
-            <h5 class="card-title">{randomStrain3}</h5>
-            <p class="card-text">{strainPositiveInfo3}</p>{" "}
-            <button>Reccommend</button>
-            <hr />
-            <a
-              class="card-text"
-              href="https://www.cdc.gov/marijuana/health-effects.html"
-            >
-              <small class="text-muted">Learn more from the CDC</small>
+              <small className="text-muted">Learn more from the CDC</small>
             </a>
           </div>
         </div>
