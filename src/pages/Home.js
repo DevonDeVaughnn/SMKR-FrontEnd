@@ -11,6 +11,7 @@ import "../";
 import { Col, Row, Container, Button } from "react-bootstrap";
 import axios from "axios";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import OMDB from "../components/Api/OMDB/OMDB";
 
 export default function Home() {
   const [favStrains, setFavStrains] = useState();
