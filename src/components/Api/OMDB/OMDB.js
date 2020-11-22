@@ -9,42 +9,92 @@ import axios from "axios";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default class OMDB extends Component {
-  getRandomMovie = (data) => {
-    let movieString = JSON.stringify(data);
-    var title = "space+jam";
-    var queryURL =
-      "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=989099eb";
+  constructor(props) {
+    super(props);
+    this.state = {
+      randomMovie: {
+        title: "",
+        year: "",
+        rating: 0,
+        actors: "",
+        plot: "",
+        author: "",
+      },
+    };
+  }
 
-    axios({
+  async componentDidMount() {
+    let movie = Math.floor(Math.random() * 2155529 + 1);
+    let queryURL = `http://www.omdbapi.com/?i=tt${movie}&apikey=989099eb`;
+    const ranmovie = await axios({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
-      console.log(response.Runtime);
+      console.log("response", response);
+
+      let movieRand = {
+        title: response.data.Title,
+        year: response.data.Year,
+        rating: response.data.Rating,
+        actors: response.data.Actors,
+        plot: response.data.Plot,
+        author: response.data.Author,
+      };
+
+      return movieRand;
     });
-  };
+    this.setState({
+      randomMovie: ranmovie,
+    });
+    console.log("hey:", this.state.randomMovie);
+  }
+
+  // async handleClick() {
+  //   let movie = Math.floor(Math.random() * 2155529 + 1);
+  //   let queryURL = `http://www.omdbapi.com/?i=tt${movie}&apikey=989099eb`;
+  //   const newMovieRand = axios({
+  //     url: queryURL,
+  //     method: "GET",
+  //   }).then(function (response) {
+  //     const newMovie = {
+  //       title: response.data.Title,
+  //       year: response.data.Year,
+  //       rating: response.data.Rating,
+  //       actors: response.data.Actors,
+  //       plot: response.data.Plot,
+  //       author: response.data.Author,
+  //     };
+  //     return newMovie;
+  //   });
+  //   this.setState({
+  //     randomMovie: newMovieRand,
+  //   });
+  // }
 
   render() {
-    return (
-      <div>
+    let result;
+    if (!this.state.randomMovie.title) {
+      result = (
         <Container fluid className="home-container">
-          <p id="title">Forrest Gump</p>
-          <p id="year">1994</p>
-          <p id="rating">8.8</p>
-          <p id="actors">
-            Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys
-          </p>
-          <p id="plot">
-            Forrest Gump, while not intelligent, has accidentally been present
-            at many historic moments, but his true love, Jenny Curran, eludes
-            him.
-          </p>
+          Random Movie Fail to load
+          {/* <button onClick={this.handleClick}>Try again</button> */}
+        </Container>
+      );
+    } else {
+      result = (
+        <Container fluid className="home-container">
+          <p id="title">{this.state.randomMovie.title}</p>
+          <p id="year">{this.state.randomMovie.year}</p>
+          <p id="rating">{this.state.randomMovie.rating}</p>
+          <p id="actors">{this.state.randomMovie.actors}</p>
+          <p id="plot">{this.state.randomMovie.plot}</p>
 
           <button id="refresh">Next</button>
           <hr />
-          <p id="author">© 2014 Yiğit Biber</p>
+          <p id="author">{this.state.randomMovie.author}</p>
         </Container>
-      </div>
-    );
+      );
+    }
+    return <div>{result}</div>;
   }
 }

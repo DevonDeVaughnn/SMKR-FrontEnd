@@ -10,6 +10,7 @@ import "../";
 import { Col, Row, Container, Button } from "react-bootstrap";
 import axios from "axios";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import OMDB from "../components/Api/OMDB/OMDB";
 
 export default class Home extends Component {
   state = {
@@ -49,6 +50,9 @@ export default class Home extends Component {
             <Col size="md-12" className="column">
               <BottomJumbotron />
             </Col>
+          </Row>
+          <Row>
+            <OMDB />
           </Row>
         </Container>
       </div>
