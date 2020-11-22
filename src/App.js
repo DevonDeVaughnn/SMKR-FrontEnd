@@ -22,31 +22,31 @@ export default function App() {
 
   useEffect(() => {
     const isLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
+      let token = localStorage.getItem("token");
       if (token === null) {
-        localStorage.setItem("auth-token", "");
+        localStorage.setItem("token", "3");
         token = "";
       }
       const tokenRes = await axios.post("/tokenValid", null, {
-        headers: { "x-auth-token": token },
+        headers: { token: token },
 
         if(err) {
           console.log(err, "couldn't get the token");
         },
       });
-      console.log(tokenRes.data);
+
       if (tokenRes.data) {
         const userRes = await axios
-          .get("/home", {
+          .get("/", {
             headers: { "x-auth-token": token },
           })
           .then(
             setUserData({
               token,
-              user: userRes.data,
+              user: userRes,
             }).catch((err) => {
               if (err) {
-                console.log(err);
+                console.log(err, "token res error");
               }
             })
           );
@@ -57,10 +57,10 @@ export default function App() {
 
   return (
     <>
-      <UserContext.Provider value={{ userData, setUserData }}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <UserContext.Provider value={{ userData, setUserData }}>
           <Switch>
-            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/" component={SignUp} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
@@ -69,8 +69,8 @@ export default function App() {
             {/* <Route exact path="/strains" component={StrainSearch} /> */}
             <Route exact path="/account" component={AccountSettings} />
           </Switch>
-        </BrowserRouter>{" "}
-      </UserContext.Provider>
+        </UserContext.Provider>
+      </BrowserRouter>{" "}
     </>
   );
 }
