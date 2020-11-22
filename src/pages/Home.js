@@ -26,6 +26,7 @@ export default function Home() {
       </Row>
       <Row>
         <Col size="md-12" className="column">
+          <OMDB />
           <BottomJumbotron />
         </Col>
       </Row>
