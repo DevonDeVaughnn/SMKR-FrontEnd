@@ -1,10 +1,11 @@
 import React from "react";
-
+import Nav from "../components/Nav/index";
+import { Card, Row, Button, Container } from "react-bootstrap";
 import axios from "axios";
 
 //extracting the name from the key
 
-function SearchStrain() {
+function StrainCards() {
   const [strain, setStrain] = React.useState({
     strains: [],
   });
@@ -44,63 +45,60 @@ function SearchStrain() {
     }
   };
   const currStrain = strain.strains[strainIndex];
-  console.log(strain.strains);
 
   return (
     <>
       {strain.strains.length > 0 ? (
-        <article className="card">
-          <img
-            className="cardImgTop"
-            src="https://picsum.photos/200"
-            alt="Card image cap"
-          ></img>
-          <div className="cardBody">
-            <h5 className="cardTitle">{currStrain.name}</h5>
-            {currStrain.effects.positive.map((effect) => (
-              <span className="cardText">{effect}</span>
-            ))}
+        <Container text-center className="bg-dark text-center text-white">
+          <div>
+            <Nav />
           </div>
-          <ul className="listGroup listGroupFlush">
-            <li className="listGroupItem">
-              {currStrain.flavors.map((flavor) => (
-                <span className="cardText">{flavor}</span>
-              ))}
-            </li>
-            <li className="listGroupItem">
-              {currStrain.effects.positive.map((effect) => (
-                <span className="cardText">{effect}</span>
-              ))}
-            </li>
-            <li className="listGroupItem">
-              {currStrain.effects.negative.map((effect) => (
-                <span className="cardText">{effect}</span>
-              ))}
-            </li>
-          </ul>
+          <Card.Img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTUvbJWCwqCC7vQuV961Bb-ug8jXu-RaHUYw&usqp=CAU"
+            alt="Card image"
+          />
+          <Card.Header>The Staindex (Switching Api Soon)</Card.Header>
+          <Card.Title style={{ textDecoration: "underline", color: "" }}>
+            <h2>{currStrain.name}</h2>
+          </Card.Title>{" "}
+          <Card.Text style={{ textDecoration: "underline", color: "" }}>
+            <h4>Flavors</h4>
+            {currStrain.flavors.map((flavor) => (
+              <span className="cardText"> {flavor}</span>
+            ))}
+          </Card.Text>
+          <Card.Text style={{ textDecoration: "underline", color: "" }}>
+            <h4>Upsides</h4>
+            {currStrain.effects.positive.map((effect) => (
+              <span className="cardText"> {effect}</span>
+            ))}
+          </Card.Text>
+          <Card.Text style={{ textDecoration: "underline", color: "" }}>
+            <h4>Downsides</h4>
+            {currStrain.effects.negative.map((effect) => (
+              <span className="cardText"> {effect}</span>
+            ))}
+          </Card.Text>
           <div className="cardBody">
-            <button
+            <Button
               className="cardLink btn btn-primary"
               onClick={() => handleButtonClick(-1)}
             >
               Prev
-            </button>
-            <button className="cardLink" onClick={() => handleButtonClick(1)}>
+            </Button>
+            <Button
+              className="cardLink btn btn-primary"
+              onClick={() => handleButtonClick(1)}
+            >
               Next
-            </button>
-            <button className="cardLink" onClick={() => handleButtonClick(1)}>
-              Like
-            </button>
-            <button className="cardLink" onClick={() => handleButtonClick(1)}>
-              Recommend
-            </button>
+            </Button>
           </div>
-        </article>
+        </Container>
       ) : null}
     </>
   );
 }
-export default SearchStrain;
+export default StrainCards;
 
 // effects:
 // medical: (5) ["Depression", "Insomnia", "Pain", "Stress", "Lack of Appetite"]

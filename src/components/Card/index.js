@@ -1,7 +1,6 @@
 import "./card.css";
 import React, { Component, useState, useContext } from "react";
 import axios from "axios";
-import API from "../../utils/API";
 
 import { Col, Info } from "../Grid";
 var strains = require("../Api/Strains/strains.json");
@@ -18,31 +17,23 @@ function InfoCards() {
   const randomStrain4 = Object.keys(strains)[
     Math.floor(Math.random() * Object.keys(strains).length)
   ];
-  const strainPositiveInfo1 = [
-    Object(strains[randomStrain1].effects.positive[0]),
-  ];
-  const strainPositiveInfo2 = [
-    Object(strains[randomStrain2].effects.positive[1]),
-  ];
-  const strainPositiveInfo3 = [
-    Object(strains[randomStrain3].effects.positive[0]),
-  ];
-  const strainPositiveInfo4 = [
-    Object(strains[randomStrain4].effects.positive[2]),
-  ];
+  const strainPositiveInfo1 = [Object(strains[randomStrain1].effects.positive)];
+  const strainPositiveInfo2 = [Object(strains[randomStrain2].effects.positive)];
+  const strainPositiveInfo3 = [Object(strains[randomStrain3].effects.positive)];
+  const strainPositiveInfo4 = [Object(strains[randomStrain4].effects.positive)];
 
-  const save = (e, req, res) => {
-    e.preventDefault();
+  // const save = (e, req, res) => {
+  //   e.preventDefault();
 
-    axios
-      .post("strain")
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  //   axios
+  //     .post("strain")
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   return (
     <Col size="md-12" className="weedCard-flex">
@@ -60,15 +51,9 @@ function InfoCards() {
           ></img>
           <div className="card-body">
             <h5 className="card-title ">{randomStrain4}</h5>
-            <input
-              type={"hidden"}
-              value={randomStrain4}
-              className="hidden-strain"
-            />
             <p className="card-text">
-              <span className="cardText">{strainPositiveInfo4}</span>
+              <span className="cardText">{strainPositiveInfo4.join(" ")}</span>
             </p>{" "}
-            <button onClick={save}>Reccommend</button>
             <a
               className="card-text"
               href="https://www.cdc.gov/marijuana/health-effects.html"
@@ -85,11 +70,13 @@ function InfoCards() {
             alt="Weed Recipe"
           ></img>
           <div className="card-body">
-            <h5 className="card-title ">{randomStrain1}</h5>
+            <h5 className="card-title "> {randomStrain1}</h5>
             <p className="card-text">
-              <span className="cardText">{strainPositiveInfo1}</span>
+              <span className="cardText">
+                {" "}
+                {strainPositiveInfo1.join("  ")}
+              </span>
             </p>{" "}
-            {/* <button onClick={save}>Reccommend</button> */}
             <hr />
             <a
               className="card-text"
@@ -107,7 +94,7 @@ function InfoCards() {
           ></img>
           <div className="card-body">
             <h5 className="card-title">{randomStrain2}</h5>
-            <p className="card-text">{strainPositiveInfo2}</p>
+            <p className="card-text">{strainPositiveInfo2.join("  ")}</p>
             {/* <button onClick={}>Reccommend</button> */}
             <hr />
             <a

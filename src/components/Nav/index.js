@@ -1,8 +1,47 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
+import axios from "axios";
 
-class Nav extends Component {
+class Nav extends React.Component {
+  state = {
+    id: "",
+    race: "",
+    flavors: "",
+    effects: "",
+    name: "",
+    strain: [],
+  };
+  componentDidMount = () => {
+    this.getStrain();
+  };
+  getStrain = async () => {
+    axios
+      .get("strain/:id")
+      .then((response) => {
+        const data = response.data;
+        this.setState({ strain: data });
+        console.log("Data Recieved");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  displayStrain = (strain) => {
+    if (!strain) return null;
+
+    strain.map((strain, index) => {
+      <div key={index}>
+        <h3>{strain.name}</h3>
+        <p>{strain.race}</p>
+      </div>;
+    });
+  };
+  searchStrain = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
+  };
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -32,8 +71,13 @@ class Nav extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/profile" className="nav-link">
-                Reccomendations
+              <Link to="/thescrolls" className="nav-link">
+                The Scrolls
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/strains" className="nav-link">
+                The Scroll Cards
               </Link>
             </li>
 
@@ -68,6 +112,7 @@ class Nav extends Component {
               aria-label="Search"
             ></input>
             <button
+              onClick={this.getStrain()}
               className="btn btn-primary"
               type="submit"
               //disabled={parseInt(user.age) < 21 ? true : false}
@@ -87,4 +132,5 @@ class Nav extends Component {
     );
   }
 }
+
 export default Nav;

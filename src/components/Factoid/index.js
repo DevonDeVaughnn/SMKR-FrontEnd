@@ -8,9 +8,9 @@ function Factoids() {
   console.log(displayRandomFact);
   return (
     <div className="media">
-      <div className="media-body">
-        <h5 className="mt-0">You know...They say...</h5>
-        <h6>{displayRandomFact}</h6>
+      <div className="media-body text-center">
+        <h5 className="mt-4 text-center">You know...They say...</h5>
+        <h6 className="mt-4 text-center">{displayRandomFact}</h6>
       </div>
     </div>
   );
