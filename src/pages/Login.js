@@ -26,6 +26,8 @@ function Login() {
         if (res.data.success) {
           localStorage.setItem("token", res.data.token);
           history.push("/home");
+        } else {
+          alert("Either Username or Password is incorrect");
         }
       })
       .catch((err) => {
@@ -40,7 +42,7 @@ function Login() {
       </Row>
       <Row>
         <Col size="md-12" className="column">
-          <Form.Group onSubmit={handleSubmit}>
+          <Form.Group onSubmit={handleSubmit()}>
             <label>Username</label>
             <Form.Control
               type="text"
@@ -60,7 +62,7 @@ function Login() {
             className="btn btn-block"
             type="submit"
             style={{ marginBottom: "70px" }}
-            onClick={handleSubmit}
+            onClick={handleSubmit()}
           >
             <i className="fa fa-cannabis" style={{ color: "whitesmoke" }}></i>
           </Button>

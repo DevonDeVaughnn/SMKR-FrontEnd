@@ -26,7 +26,7 @@ export default class OMDB extends Component {
   async componentDidMount() {
     let movie = Math.floor(Math.random() * 2155529 + 1);
     let queryURL = `http://www.omdbapi.com/?i=tt${movie}&apikey=989099eb`;
-    const ranmovie = await axios({
+    const ranMovie = await axios({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
@@ -44,10 +44,32 @@ export default class OMDB extends Component {
       return movieRand;
     });
     this.setState({
-      randomMovie: ranmovie,
+      randomMovie: ranMovie,
     });
     console.log("hey:", this.state.randomMovie);
   }
+
+  // async handleClick() {
+  //   let movie = Math.floor(Math.random() * 2155529 + 1);
+  //   let queryURL = `http://www.omdbapi.com/?i=tt${movie}&apikey=989099eb`;
+  //   const newMovieRand = axios({
+  //     url: queryURL,
+  //     method: "GET",
+  //   }).then(function (response) {
+  //     const newMovie = {
+  //       title: response.data.Title,
+  //       year: response.data.Year,
+  //       rating: response.data.Rating,
+  //       actors: response.data.Actors,
+  //       plot: response.data.Plot,
+  //       author: response.data.Author,
+  //     };
+  //     return newMovie;
+  //   });
+  //   this.setState({
+  //     randomMovie: newMovieRand,
+  //   });
+  // }
 
   render() {
     let result;
@@ -60,14 +82,13 @@ export default class OMDB extends Component {
       );
     } else {
       result = (
-        <Container fluid className="home-container">
+        <Container fluid className="home-container text-center">
           <p id="title">{this.state.randomMovie.title}</p>
           <p id="year">{this.state.randomMovie.year}</p>
           <p id="rating">{this.state.randomMovie.rating}</p>
           <p id="actors">{this.state.randomMovie.actors}</p>
           <p id="plot">{this.state.randomMovie.plot}</p>
 
-          <button id="refresh">Next</button>
           <hr />
           <p id="author">{this.state.randomMovie.author}</p>
         </Container>

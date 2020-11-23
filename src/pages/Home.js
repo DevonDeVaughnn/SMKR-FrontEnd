@@ -3,7 +3,6 @@ import { setState } from "react-dom";
 import Nav from "../components/Nav/index";
 import Jumbotron from "../components/Jumbotron";
 import BottomJumbotron from "../components/Jumbotron/FactJumbotron";
-
 import Factoid from "../components/Factoid";
 import SearchStrain from "./StrainCards";
 import "../components/AppCss/style.css";
@@ -14,14 +13,15 @@ import axios from "axios";
 import OMDB from "../components/Api/OMDB/OMDB";
 
 export default function Home() {
-  const [favStrains, setFavStrains] = useState();
-
   return (
     <Container fluid className="home-container">
       <Row>
-        <Col size="md-12" className="column">
+        <Col size="md-12" className="column text-center">
           <Nav />
           <Jumbotron />
+          <p style={{ alignText: "center" }}>
+            (New Movie Api for your convenience coming soon!)
+          </p>
         </Col>
       </Row>
       <Row>

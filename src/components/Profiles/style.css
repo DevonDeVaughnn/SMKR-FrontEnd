@@ -45,3 +45,22 @@ body {
 .spotify-widget {
   text-align: center;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #042f047e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #56d356;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9bc79b;
+}

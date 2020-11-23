@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
+import { Table, Jumbotron } from "react-bootstrap";
+import Factoids from "../components/Factoid/index";
 
-function App() {
-  const [state, setState] = React.useState({
+function TheScrolls() {
+  const [strain, setStrain] = React.useState({
     strains: [],
   });
 
@@ -13,8 +15,8 @@ function App() {
       const SEARCH_URL = BASE_URL + "/strains/search/all";
       try {
         const { data: strains } = await axios.get(SEARCH_URL);
-        setState((state) => ({
-          ...state,
+        setStrain((strain) => ({
+          ...strain,
           strains: Object.entries(strains).map(([name, obj]) => ({
             ...obj,
             name,
@@ -27,33 +29,74 @@ function App() {
     getSTRAIN();
   }, []);
 
-  console.log(state.strains);
-
   return (
-    <table>
-      <thead>
-        <tr>
-          <td>Name</td>
-          <td>Race</td>
-          <td>Flavors</td>
-          <td>Positive Effects</td>
-          <td>Negative Effects</td>
-          <td>Medical Effect</td>
-        </tr>
-      </thead>
-      <tbody>
-        {state.strains.map((s, i) => (
-          <tr key={i}>
-            <td>{s.name}</td>
-            <td>{s.race}</td>
-            <td>{s.flavors}</td>
-            <td>{s.effects.positive}</td>
-            <td>{s.effects.negative}</td>
-            <td>{s.effects.medical}</td>
+    <>
+      <Factoids w-100 text-center />
+      <br></br>
+      <Jumbotron w-100 text-center>
+        <i className="fa fa-cannabis fa-7x" style={{ color: "whitesmoke" }}></i>{" "}
+        <h2> T H E S C R O L L S . . . </h2>
+        <h5>Please scroll. . . we have over 2000 strains</h5>
+        <h6>(search feature coming soon)</h6>
+      </Jumbotron>
+      <Table
+        striped
+        borderd
+        style={{
+          color: "white",
+          textAlign: "center",
+          borderLeft: "1px solid white",
+          borderRight: "1px solid white",
+        }}
+      >
+        <thead
+          style={{
+            borderLeft: "1px solid white",
+            borderRight: "1px solid white",
+            background: "#064206",
+          }}
+        >
+          <tr>
+            <th>
+              <h4>Name</h4>
+            </th>
+            <th>
+              <h4>Race</h4>
+            </th>
+            <th>
+              <h4>Flavors</h4>
+            </th>
+            <th>
+              <h4>Positives</h4>
+            </th>
+            <th>
+              <h4>Negatives</h4>
+            </th>
+            <th>
+              <h4>Medical Effects</h4>
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody
+          style={{
+            borderLeft: "1px solid white",
+            borderRight: "1px solid white",
+            background: "#042f047e",
+          }}
+        >
+          {strain.strains.map((s, i) => (
+            <tr key={i}>
+              <td>{s.name} </td>
+              <td>{s.race} </td>
+              <td>{s.flavors.join(", ")} </td>
+              <td>{s.effects.positive.join(", ")} </td>
+              <td>{s.effects.negative.join(", ")} </td>
+              <td>{s.effects.medical.join(", ")} </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </>
   );
 }
-export default App;
+export default TheScrolls;

@@ -5,11 +5,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-
+import StrainCards from "./pages/StrainCards";
 import AccountSettings from "./pages/AccountSettings";
 import Straindex from "../src/pages/Straindex";
-// import StrainSearch from "./pages/StrainSearch";
-// import Messages from "./pages/Messages"
+import TheScrolls from "./pages/Straindex";
 import Profile from "./pages/Profile";
 
 // import StrainSearch from "./pages/Straindex";
@@ -64,9 +63,8 @@ export default function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/straindex" component={Straindex} />
-
-            {/* <Route exact path="/strains" component={StrainSearch} /> */}
+            <Route exact path="/thescrolls" component={TheScrolls} />
+            <Route exact path="/strains" component={StrainCards} />
             <Route exact path="/account" component={AccountSettings} />
           </Switch>
         </UserContext.Provider>
